@@ -5,6 +5,7 @@ Synkmöte med de andra projektgrupperna. Vi fick reda på vad de andra ska arbet
 
 - Tisdag 20/9-16:
 Vi började dagen med att få igång våran Photon. Vi fick LED-lampan att lyssa, på/av. 
-När vi väl skulle börja starta upp accelerometer behövde vi något som heter InternetButton och var därför tvugna att byta hårdvaran. 
-Vi fick en ny Photon som satt i InternetButton men som tyvärr vi haft problem med. 
+När vi väl skulle börja starta upp accelerometer behövde vi något som heter InternetButton och var därför tvungna att byta hårdvaran. 
+Vi fick en ny Photon som satt i en InternetButton men som tyvärr vi haft problem med. 
 Vi har frågat både på forum, läst docs och frågat Linus om hjälp men inget har fungerat. I nuläget väntar vi på svar.
+Dock verkar det som att problemet ligger med firmware på vår Photon.
