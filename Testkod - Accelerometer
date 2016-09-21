@@ -11,7 +11,7 @@ void setup() {
 
 void loop(){
 
-    //How much are you moving in the x direction? (look at the white text on the board)
+    //How much are you moving in the x direction?
     int xValue = b.readX();
 
     //How about in the y direction?
