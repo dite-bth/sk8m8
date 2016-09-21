@@ -1,0 +1,33 @@
+#include "InternetButton/InternetButton.h"
+#include "math.h"
+
+
+InternetButton b = InternetButton();
+
+void setup() {
+
+    b.begin();
+}
+
+void loop(){
+
+    //How much are you moving in the x direction? (look at the white text on the board)
+    int xValue = b.readX();
+
+    //How about in the y direction?
+    int yValue = b.readY();
+
+    //And the z!
+    int zValue = b.readZ();
+
+    //This will make the color of the Button change with what direction you shake it
+    //The abs() part takes the absolute value, because negatives don't work well
+    b.allLedsOn(abs(xValue), abs(yValue), abs(zValue));
+
+    //Wait a mo'
+    delay(50);
+}
+
+// För att få variabler med accelerometervärdena används "b.read", såsom b.readX(), b.readY(), b.readZ().
+// I exemplet ovan skapas variabler på samma sätt som i C# (t.ex. på rad 15 skapas en integer-variabel som kallas "xValue",
+// och får värdet från "b.readX()" ).
