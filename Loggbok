@@ -29,7 +29,10 @@ att samla och förstå datan som kommer från vår Photon. Till slut förstod vi
 arbetsuppgifter;
 
 //Robert ville hålla på med den grafiska appen som fick bli en webbapplikation. Den skulle innehålla lite information om projektet
-  och en feature att köra igång en session. 
+  och en feature att köra igång en session.
+  -Jag har börjat på en webbsida där jag har lagt till knappar till alla de funktioner vi vet att vi vill ha hittils med hjälp av html/css.
+  https://gyazo.com/4a195cf22f2247350b5c2e68785b5cb6
+  https://gyazo.com/6e8035588d975526e9269259cd3836ea
 
 //Joakim ville ansvara för python-appen som ska hantera och göra informationen som skickas av Photonen läsvänlig och användarvänlig.
 
