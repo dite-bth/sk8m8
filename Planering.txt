@@ -1,13 +1,13 @@
 Sk8M8 - The ultimate skating app!
 
-Vi ska göra en skateboard app där man kan se hur högt man hoppar och hur snabbt man åker. 
-Med hjälp av Phanton's accerelationsfunktion tar vi ut hastig/höjd/längd värden
- som vi tänkt använda i en applikation som vi skapar med hjälp av Python.
+Vi ska gÃ¶ra en skateboard app dÃ¤r man kan se hur hÃ¶gt man hoppar och hur snabbt man Ã¥ker. 
+Med hjÃ¤lp av Photon's accerelationsfunktion tar vi ut hastig/hÃ¶jd/lÃ¤ngd vÃ¤rden
+ som vi tÃ¤nkt anvÃ¤nda i en applikation som vi skapar med hjÃ¤lp av Python.
 
-Hårdvara: 
-- Phanton
+HÃ¥rdvara: 
+- Photon
 
-Programmeringspråk: 
+ProgrammeringsprÃ¥k: 
 - Python med ev. libaries 
 
 Databas: 
