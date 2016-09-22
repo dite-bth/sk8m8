@@ -13,15 +13,21 @@ Vi fick en ny Photon som satt i en InternetButton men som tyvärr vi haft proble
 Vi har frågat både på forum, läst docs och frågat Linus om hjälp men inget har fungerat. I nuläget väntar vi på svar.
 Dock verkar det som att problemet ligger med firmware på vår Photon.
 
+- Onsdag 21/9-16:
+Synkmöte med de andra projektgrupperna.
+Vi fick vår Photon att fungera tillsammans med vår InternetButton.
+Vi ritade upp en plan/karta över hur projektet ska se ut: [ACCELEROMETER] -> APP (Hantera data) -> Databas (Python) -> Grafik app (Med session)
+
 - Tordag 22/9-16:
 Torsdagen började med ett långt samtal med Linus. Han var orolig över hur vår struktur såg ut i gruppen. Vi hade precis gjort en karta över
-hur arbetet skulle se ut med [ACCELEROMETER -> APP (Hantera data) -> Databas (Python) -> Grafik app (Med session). Vi förklarade att det 
+hur arbetet skulle se ut med [ACCELEROMETER] -> APP (Hantera data) -> Databas (Python) -> Grafik app (Med session). Vi förklarade att det 
 första som behövdes göras var att få accelerometern att printa sitt resultat. Linus blev tveksam och tyckte definitivt att vi skulle
 dela upp arbetet så att alla kunna hålla på med olika saker och därmed få projektet klart snabbare. Han menade att vi tappade tid och
 resurser när vi inte jobbade på olika saker samtidigt.
 Vi diskuterade det ett tag och hade svårigheter att förstå hur vi skulle ta oss vidare med projektet och kunna börja med exempelvis
 att samla och förstå datan som kommer från vår Photon. Till slut förstod vi och enade oss om att Linus hade rätt och vi delade upp
-arbetsuppgifter.
+arbetsuppgifter;
+
 //Robert ville hålla på med den grafiska appen som fick bli en webbapplikation. Den skulle innehålla lite information om projektet
   och en feature att köra igång en session. 
 
