@@ -1,5 +1,7 @@
 Sk8M8 - The ultimate skating app for professionals as well as beginners
 
+Projektmedlemmar: Göran, Robert, Joakim, Nikolas
+
 Vi ska göra en skateboard applikation där man kan se hur högt man hoppat i en session och hur snabbt man åker.
 Syftet med den applikationen är att hjälpa erfarna skatare så väl som nybörjare att utveckla sina tricks och se vad de behöver
 jobba med. I en session som omfattar ca 10 sekunder samlas information från en accelerometer som sitter på skateboarden och som
@@ -10,6 +12,8 @@ sen skickas till webbapplikationen. Där får du upp statistik som:
 
 Utifrån den statistiken ser användaren vad som behövs utvecklas för att nå sina mål att exempelvis sätta en kickflip.
 Detta görs alltså med hjälp av Photons och Internetbuttons accelerometer. 
+
+Metod: Kanban
 
 Den hårdvara som krävs:
 - Photon
