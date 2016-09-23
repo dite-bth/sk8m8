@@ -1,21 +1,39 @@
-Sk8M8 - The ultimate skating app!
+Sk8M8 - The ultimate skating app for professionals as well as beginners
 
-Vi ska göra en skateboard app där man kan se hur högt man hoppar och hur snabbt man åker. 
-Med hjälp av Photon's accerelationsfunktion tar vi ut hastig/höjd/längd värden
- som vi tänkt använda i en applikation som vi skapar med hjälp av Python.
+Vi ska göra en skateboard applikation där man kan se hur högt man hoppat i en session och hur snabbt man åker.
+Syftet med den applikationen är att hjälpa erfarna skatare så väl som nybörjare att utveckla sina tricks och se vad de behöver
+jobba med. I en session som omfattar ca 10 sekunder samlas information från en accelerometer som sitter på skateboarden och som
+sen skickas till webbapplikationen. Där får du upp statistik som: 
+1. Hur högt du hoppade
+2. Hur snabbt du åkte
+3. Lägsta/högsta punkt
 
-Hårdvara: 
+Utifrån den statistiken ser användaren vad som behövs utvecklas för att nå sina mål att exempelvis sätta en kickflip.
+Detta görs alltså med hjälp av Photons och Internetbuttons accelerometer. 
+
+Den hårdvara som krävs:
 - Photon
+- Internetbutton
+- Ett gyro-chip om så behövs
 
 Programmeringspråk: 
 - Python med ev. libaries 
+- C++ med API från Particle.io
+- HTML, CSS
+
 
 Databas: 
 - MySQL
+- Python-databas
 - Json
 
 Produkt: 
-- Webb/mobil app 
+- Webb-applikation
+
+
+Vi kommer under dessa 7 veckor träffas varje dag klockan 10:00 för att jobba ihop med projektet. 
+Syftet med att träffas varje dag är vi ska kunna gå igenom de steg vi tagit och problem som uppstått.
+
 
 
 
