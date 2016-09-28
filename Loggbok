@@ -46,14 +46,16 @@ arbetsuppgifter;
   
 - Fredag 23/9-16:
 Uppdatering av planeringen
-
 Robert: Jag har lagt till en 'history'- och 'about'- sida till webbapplikationen. 
 
 - Måndag 26/9-16:
 Synkmöte med de andra grupperna
-
+Med hjälp av Linus lyckades vi få ut informationen på webben och vi ska arbeta vidare med det på tisdag.
+Idag satte vi ett mål för veckan och det var att automatiskt få upp all information vi behöver på webben så att vi 
+kan börja arbeta med Jockes PHP-app.
 Robert: Jag la till en länk till startsidan i loggan, och förbättrade en del av koden. Jag la upp min webbapplikation på Github. Jag har läst på om hur man gör sin webbsida mobilanpassad.
  
 - Tisdag 27/9-16:
-
+Joakim & Göran: I måndags kom vi långt i och med att vi lyckades skicka koordinaterna vidare till en URL genom webhooks. På så sätt
+kan Joakim börja använda och läsa av datan som kommer igenom. 
 Robert & Nikolas: Vi har gjort en databas med phpmyadmin och kopplat den till vår webbapplikation.
