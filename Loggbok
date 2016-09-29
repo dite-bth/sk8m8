@@ -59,3 +59,9 @@ Robert: Jag la till en länk till startsidan i loggan, och förbättrade en del 
 Joakim & Göran: I måndags kom vi långt i och med att vi lyckades skicka koordinaterna vidare till en URL genom webhooks. På så sätt
 kan Joakim börja använda och läsa av datan som kommer igenom. 
 Robert & Nikolas: Vi har gjort en databas med phpmyadmin och kopplat den till vår webbapplikation.
+
+- Onsdag 28/9-16:
+Synkmöte med de andra grupperna.
+
+- Torsdag 29/9-16
+Robert: Jag har implementerat Jockes kod i min webbapplikation och skrivit CSS kod för att förbättra utseendet när man ser sin 'Airtime' 
