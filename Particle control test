@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+  <body>
+  <center>
+  <br>
+  <br>
+  <br>
+  <form action="https://api.particle.io/v1/devices/3d003d000a47343432313031/led?access_token=997c813e54c1d6e7fc6742846075369f8586dada" method="POST">
+    Tell your device what to do!<br>
+    <br>
+    <input type="radio" name="args" value="on">Turn the LED on.
+    <br>
+    <input type="radio" name="args" value="off">Turn the LED off.
+    <br>
+    <br>
+    <input type="submit" value="Do it!">
+  </form>
+  </center>
+  </body>
+</html>
