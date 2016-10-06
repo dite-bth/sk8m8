@@ -1,16 +1,18 @@
 $(document).ready(function () {
 
-	$('#ID').text('3');
+	$('#BUTTON-ID').on('click', function () {
+	
+		$('#ID').text('3');
 
-	$('#ID').text('number');
-	setTimeout(function() {
-            $('#ID').text('2');
-        }, 1000);
+		$('#ID').text('number');
+		setTimeout(function() {
+		    $('#ID').text('2');
+		}, 1000);
 
-	setTimeout(function() {
-            $('#ID').text('1');
-        }, 2000);
-
+		setTimeout(function() {
+		    $('#ID').text('1');
+		}, 2000);
+    	});
 });
 
 
