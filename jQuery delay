@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	$('#BUTTON-ID').on('click', function () {
+	$('#BUTTON-ID').click(function(){
 	
 		$('#ID').text('3');
 
