@@ -15,6 +15,17 @@ $(document).ready(function () {
     	});
 });
 
+//Expand Div
+$("#ID").click(function(){
+		$(this).css("height", "00000000")
+	});
+	
+//Expand Div animated
+$('#ID').toggle(function() {
+$(this).animate({width: '00000000'}, 1000)
+}, function() {
+$(this).animate({width: '0000000'}, 1000)
+})
 
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
