@@ -64,7 +64,21 @@ Robert & Nikolas: Vi har gjort en databas med phpmyadmin och kopplat den till v�
 Synkmöte med de andra grupperna.
 
 - Torsdag 29/9-16
-Robert: Jag har implementerat Jockes kod i min webbapplikation och skrivit CSS kod för att förbättra utseendet när man ser sin 'Airtime' 
+Robert: Jag har implementerat Joakims kod i min webbapplikation och skrivit CSS kod för att förbättra utseendet när man ser sin 'Airtime' 
 
 - Fredag 30/9-16
 Robert: Jag har implementerat kod från Particle och Photon till webbapplikationen och ändrat en del av strukturen på en sida för att matcha med den informationen vi får från Particle och Photon
+
+- Måndag 03/9-16
+Synkmöte med de andra grupperna.
+Robert & Joakim: Vi har försökt att förkorta vår väg till vår data med hjälp av php, men vi har inte lyckats lösa det.
+
+- Tisdag 04/9-16
+Robert & Joakim: Samma som dagen innan, fortfarande ingen lösning.
+
+- Onsdag 05/9-16
+Synkmöte med de andra grupperna inställt.
+Robert: Jag har tittat på vad jquery kan göra och om det är något jag kan lägga till på webbapplikation.
+
+- Torsdag 06/9-16
+Robert & Joakim: Vi har börjat med att göra om webbapplikationen från 'scratch'. Vi använder oss mycket av jquery.
