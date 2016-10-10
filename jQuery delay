@@ -1,33 +1,7 @@
 $(document).ready(function () {
 
-	$('#BUTTON-ID').click(function(){
-	
-		$('#ID').text('3');
-
-		$('#ID').text('number');
-		setTimeout(function() {
-		    $('#ID').text('2');
-		}, 1000);
-
-		setTimeout(function() {
-		    $('#ID').text('1');
-		}, 2000);
-    	});
+	setTimeout(function() {
+		    //KOD
+		}, Tid i millisekunder);
 });
 
-//Expand Div
-$("#ID").click(function(){
-		$(this).css("height", "00000000")
-	});
-	
-//Expand Div animated
-$('#ID').toggle(function() {
-$(this).animate({width: '00000000'}, 1000)
-}, function() {
-$(this).animate({width: '0000000'}, 1000)
-})
-
-
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="app.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
