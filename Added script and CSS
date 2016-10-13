@@ -1,5 +1,76 @@
 //Joakim
+ //Funktion
+  $('#box').click(function() {
 
+          $("#photonDiv").slideToggle("slow");
+          if (sessionExpand) {
+            $("#arrow").hide();
+            $("#backButton").hide();
+            $("#startPhoton").hide();
+            $("#info").hide();
+            $(this).css('font-size', '350%');
+            $(this).text('Begin Session');
+            setTimeout(function() {
+            $("#history").show();
+            $("#about").show();
+            $(this).css('opacity', '0.6');
+            }, 600);
+            sessionExpand = false;
+            expanded = false;
+          }
+          else{
+            $(this).text('Start Session');
+            $(this).css('opacity', '1.0');
+            $(this).text('^');
+            $(this).css('font-size', '500%');
+            $("#history").hide();
+            $("#about").hide();
+            setTimeout(function() {
+              $("#arrow").show();
+              $("#backButton").show();
+              $("#startPhoton").show();
+              $("#info").show();
+            }, 600);
+            sessionExpand = true;
+            expanded = true;
+          }
+
+
+
+          /*setTimeout(function() {
+                    $("#box").append("<div id='backBtn' class='btn'>Back</div>");
+                    $("#box").append("<div id='runBtn' class='btn'>Run</div>");
+                    $(".btn").mouseover(function(){
+              $(this).css('opacity', '0.8');
+            });
+            $(".btn").mouseout(function(){
+              $(this).css("opacity", "0.6");
+            });
+
+            $('#backBtn').click(function() {
+            location.reload();
+            //$(this).remove();
+            });
+            $('#runBtn').click(function() {
+              $("#box").append("<div id='loader'></div>");
+              $("#runBtn").text("3");
+
+              setTimeout(function() {
+                $("#runBtn").text("2");
+                }, 1000);
+              setTimeout(function() {
+                $("#runBtn").text("1");
+                }, 2000);
+              setTimeout(function() {
+                $("#loader").remove();
+                $("#runBtn").remove();
+                }, 3000);
+            });
+
+              }, 2000);*/
+
+
+    });
 
 //Göran
 
