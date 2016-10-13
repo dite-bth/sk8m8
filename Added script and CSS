@@ -71,6 +71,14 @@
 
 
     });
+    
+    //Nya varibler (ersätt de översta i javascript-filen).
+    
+    var sessionExpand = false;
+   var expanded = false;
+  
+   //Ny Div under "box"-diven.
+   <div id="photonDiv"></div>
 
 //Göran
 
