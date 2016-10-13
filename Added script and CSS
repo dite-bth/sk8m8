@@ -1,5 +1,5 @@
 //Joakim
- //Funktion
+ //Funktion för att expandera "session"-diven.
   $('#box').click(function() {
 
           $("#photonDiv").slideToggle("slow");
