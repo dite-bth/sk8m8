@@ -19,6 +19,10 @@ $(document).ready(function () {
 					$("#backButton").hide();
 					$("#startPhoton").hide();
 					$("#info").hide();
+					$("#submitDiv").hide();
+					$("#infoText").text("To begin hit Start and wait for your Photon to light up. </br>You then have 6 seconds to perform one, two or three ollies.");
+					$("#infoText2").text("");
+					$("#submitDiv").text("");
 					$(this).css('font-size', '350%');
 					$(this).text('Begin Session');
 					setTimeout(function() {
@@ -109,7 +113,7 @@ $(document).ready(function () {
 						$.ajax({
 			   			url: 'LeaderboardFunktion.php',
 			   			success: function (response) {
-			   				$("#historyDiv").append(respone);
+			   				$("#historyDiv").html(respone);
 				   			
 			   				}
 						});
@@ -248,7 +252,7 @@ $(document).ready(function () {
    				}
 			});
 
-		}, 10000);
+		}, 13000);
 
 	});
 	/*$('#postBtn').click(function() {
@@ -273,8 +277,11 @@ $(document).ready(function () {
         dataType: 'html'
     })
     .done(function(data){
-	    $('#submitDiv').fadeOut('slow', function(){
-	         $('#submitDiv').fadeIn('slow').html(data);
+	    $('#submitDiv', '#info').fadeOut('slow', function(){
+	         $('#info').fadeIn('slow').text(data);
+	         setTimeout(function() {
+				location.reload();
+			}, 4000);
         });
     })
     .fail(function(){
@@ -282,4 +289,3 @@ $(document).ready(function () {
     });
 });
 });
-
