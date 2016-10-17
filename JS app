@@ -109,7 +109,7 @@ $(document).ready(function () {
 						$.ajax({
 			   			url: 'LeaderboardFunktion.php',
 			   			success: function (response) {
-			   				$("#historyDiv").html(respone);
+			   				$("#historyDiv").append(respone);
 				   			
 			   				}
 						});
