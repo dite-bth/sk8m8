@@ -1,0 +1,283 @@
+
+var expanded = false;
+
+$(document).ready(function () {
+
+	$("#backButton").hide();
+	$("#startPhoton").hide();
+	$("#info").hide();
+	$("#loader").hide();
+	$("#arrow").hide();
+	$("#submitDiv").hide();
+	$("#aboutText").hide();
+
+	$('#box').click(function() {
+			
+				$("#photonDiv").slideToggle("slow");
+				if (expanded) {
+					$("#arrow").hide();
+					$("#backButton").hide();
+					$("#startPhoton").hide();
+					$("#info").hide();
+					$(this).css('font-size', '350%');
+					$(this).text('Begin Session');
+					setTimeout(function() {
+						expanded = false;
+						$("#history").show();
+						$("#about").show();
+						$(this).css('opacity', '0.6');
+					}, 600);
+					
+					
+				}
+				else{
+					$(this).text('Start Session');
+					$(this).css('opacity', '1.0');
+					$(this).text('^');
+					$(this).css('font-size', '500%');
+					$("#history").hide();
+					$("#about").hide();
+					setTimeout(function() {
+						$("#arrow").show();
+						$("#backButton").show();
+						$("#startPhoton").show();
+						$("#info").show();
+					}, 600);
+					
+					expanded = true;
+				}
+				
+	});
+
+	$('#history').click(function() {
+		
+
+				if (expanded) {
+					$("#historyDiv").slideToggle("slow");
+
+					//$(this).css('margin-top', '10%')
+					$(this).css('font-size', '50px');
+					$(this).text('');
+
+					setTimeout(function() {
+						expanded = false;
+						$("#box").show();
+						$("#about").show();
+						$("#history").text('History');
+						$(this).css('opacity', '0.6');
+
+					}, 1500);
+
+					/*
+					setTimeout(function() {
+					
+					}, 1000);
+					*/
+					setTimeout(function() {
+						$("#history").animate({
+					    marginTop: "120px",
+					   
+					  }, 500, function() {
+					    // Animation complete.
+					  });
+						
+					}, 800);
+					
+					
+				}
+				else{
+					setTimeout(function() {
+						$("#historyDiv").slideToggle("slow");
+					}, 1000);
+
+					$("#history").animate({
+					    marginTop: 0,
+					   
+					  }, 1000, function() {
+					    // Animation complete.
+					  });
+					$(this).css('margin-top', '0px')
+					$(this).text('Start Session');
+					$(this).css('opacity', '1.0');
+					$(this).text('');
+					$(this).css('font-size', '500%');
+					$("#box").hide();
+					$("#about").hide();
+					setTimeout(function() {
+						$('#history').text('^');
+						$.ajax({
+	   			url: 'LeaderboardFunktion.php',
+	   			success: function (response) {
+	   				$("#historyDiv").html(response);
+	   				}
+	   			}
+						}, 1400);
+
+						expanded = true;
+				}
+
+					
+	});
+
+	$('#about').click(function() {
+		
+
+				if (expanded) {
+					$("#aboutDiv").slideToggle("slow");
+
+					//$(this).css('margin-top', '10%')
+					$(this).css('font-size', '50px');
+					$(this).text('');
+
+					setTimeout(function() {
+						expanded = false;
+						$("#box").show();
+						$("#history").show();
+						$("#about").text('About');
+						$(this).css('opacity', '0.6');
+
+					}, 1500);
+
+					/*
+					setTimeout(function() {
+					
+					}, 1000);
+					*/
+					setTimeout(function() {
+						$("#about").animate({
+					    marginTop: "240px",
+					   
+					  }, 500, function() {
+					    // Animation complete.
+					  });
+						
+					}, 800);
+					
+					
+				}
+				else{
+					setTimeout(function() {
+						$("#aboutDiv").slideToggle("slow");
+					}, 1000);
+
+					$("#about").animate({
+					    marginTop: 0,
+					   
+					  }, 1000, function() {
+					    // Animation complete.
+					  });
+					$(this).css('margin-top', '0px')
+					$(this).text('Start Session');
+					$(this).css('opacity', '1.0');
+					$(this).text('');
+					$(this).css('font-size', '500%');
+					$("#box").hide();
+					$("#history").hide();
+					setTimeout(function() {
+						$('#about').text('^');
+						$("#aboutText").show();
+					}, 1400);
+					expanded = true;
+				}
+					
+	});
+	
+
+	$(".mainButtons").mouseover(function(){
+		if (expanded == false) {
+			$(this).css('opacity', '1.0');
+		}
+	});
+	$(".mainButtons").mouseout(function(){
+		if (expanded == false) {
+			$(this).css("opacity", "0.6");
+		}
+	});
+
+	$(".buttons").mouseover(function(){
+		
+		$(this).css('opacity', '1.0');
+		
+	});
+	$(".buttons").mouseout(function(){
+		
+		$(this).css("opacity", "0.6");
+		
+	});
+
+	$('#startPhoton').click(function() {
+		$(this).hide();
+		$("#loader").show();
+		setTimeout(function() {
+			
+		}, 1000);
+		setTimeout(function() {
+			
+		}, 2000);
+		setTimeout(function() {
+			$("#loader").hide();
+			$.ajax({url: 'RunPhoton.php'});
+		}, 3000);
+		
+		setTimeout(function() {
+			$.ajax({
+   			url: 'AirtimeCalculator.php',
+   			success: function (response) {
+   				var commaCheck = response.includes(",");
+	   			if (response == 0) {
+	   				var result = "invalid. Either you didn't jump, or you're cheating";
+	   			}
+	   			else {
+	   				if (commaCheck) {
+	   					var jumps = response.split(",");
+	   					var result = Math.max.apply(Math, jumps);
+	   				}
+	   				else {
+	   					var result = response;
+	   				}
+	   			}
+	   			
+	   			$("#time").val(result);
+
+	     		$("#infoText").text("Your best airtime was " + result + " second(s).");
+	     		$("#infoText2").text("Would you like to add your result to the leaderboard?");
+	     		$("#submitDiv").show();
+   				}
+			});
+
+		}, 10000);
+
+	});
+	/*$('#postBtn').click(function() {
+		var nameString = $('#nameInput').val();
+		
+		$.ajax({
+   			url: 'InsertToDatabase.php',
+   			success: function (response) {
+   				$("#infoText").text(response);
+   				}
+			});
+	});*/
+
+	$('#reg-form').submit(function(e){
+		
+    e.preventDefault(); // Prevent Default Submission
+		
+    $.ajax({
+	url: 'InsertingToDatabase.php',
+	type: 'POST',
+	data: $(this).serialize(), // it will serialize the form data
+        dataType: 'html'
+    })
+    .done(function(data){
+	    $('#submitDiv').fadeOut('slow', function(){
+	         $('#submitDiv').fadeIn('slow').html(data);
+        });
+    });
+    .fail(function(){
+	alert('Ajax Submit Failed ...');	
+    });
+	});
+
+});
+
