@@ -105,17 +105,20 @@ $(document).ready(function () {
 					$("#about").hide();
 					setTimeout(function() {
 						$('#history').text('^');
+
 						$.ajax({
-	   			url: 'LeaderboardFunktion.php',
-	   			success: function (response) {
-	   				$("#historyDiv").html(response);
-	   				}
-	   			}
-						}, 1400);
+			   			url: 'LeaderboardFunktion.php',
+			   			success: function (response) {
+			   				$("#historyDiv").html(respone);
+				   			
+			   				}
+						});
+					}, 1400);
 
-						expanded = true;
+
+
+					expanded = true;
 				}
-
 					
 	});
 
@@ -273,11 +276,10 @@ $(document).ready(function () {
 	    $('#submitDiv').fadeOut('slow', function(){
 	         $('#submitDiv').fadeIn('slow').html(data);
         });
-    });
+    })
     .fail(function(){
 	alert('Ajax Submit Failed ...');	
     });
-	});
-
+});
 });
 
