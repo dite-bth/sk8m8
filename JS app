@@ -109,13 +109,6 @@ $(document).ready(function () {
 					setTimeout(function() {
 						$('#history').text('^');
 
-						$.ajax({
-			   			url: 'LeaderboardFunktion.php',
-			   			success: function (response) {
-			   				$("#historyDiv").html(respone);
-				   			
-			   				}
-						});
 					}, 1400);
 
 
@@ -253,16 +246,19 @@ $(document).ready(function () {
 		   				else {
 		   					var result = response;
 		   				}
+		   				$("#submitDiv").show();
+		   				$("#infoText2").text("Would you like to add your result to the leaderboard?");
+		   				$("#startPhoton").css('margin-top', '-5%');
 		   			}
 		   			
 		   			$("#time").val(result);
 		   			$("#infoText").css('font-size', '20px');
 		     		$("#infoText").text("Your best airtime was " + result + " second(s).");
-		     		$("#infoText2").text("Would you like to add your result to the leaderboard?");
-		     		$("#submitDiv").show();
+		     		//$("#infoText2").text("Would you like to add your result to the leaderboard?");
+		     		//$("#submitDiv").show();
 		     		$("#startPhoton").show();
 		     		$("#startPhoton").text("Retry?");
-		     		$("#startPhoton").css('margin-top', '-5%');
+		     		//$("#startPhoton").css('margin-top', '-5%');
 		     		photonDone = true;
 	   				}
 				});
@@ -305,4 +301,3 @@ $(document).ready(function () {
     });
 });
 });
-
