@@ -1,0 +1,275 @@
+body {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    
+}
+html {
+    height: 100%
+    width: 100%;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 80px;
+
+font-family: 'Bungee Inline', cursive;
+  text-shadow: 4px 4px 8px black;
+  cursor: default;
+
+
+}
+
+p {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: Verdana, "Times New Roman";
+  width: 40%;
+  margin: auto;
+}
+
+h2 {
+  color: white;
+  text-align: left;
+  font-size: 50px;
+  font-family: Verdana, "Times New Roman";
+}
+
+.buttons{
+  cursor: pointer;
+}
+
+.mainButtons{
+  cursor: pointer;
+}
+
+#box {
+  position: absolute;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: 10%;
+  font-size: 350%;
+  font-family: Georgia, "Times New Roman";
+  border: 6px inline #1456FF;
+  border-radius: 5px;
+  transition: height 2s;
+  opacity: 0.6;
+  z-index: 1;
+ }
+
+ #photonDiv, #historyDiv, #aboutDiv{
+  position: absolute;
+  background-color: black;
+  color: white;
+  text-align:center;
+  display: block;
+  display: none;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  width: 80%;
+  height: 50%;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman";
+  border: 6px inline #1456FF;
+  border-radius: 5px;
+  /*opacity: 0.8;*/
+  z-index: -1;
+
+ }
+
+table {
+  position: absolute;
+  width: 100%;
+  border-radius: 5px;
+  
+font-family: 'Bungee Inline', cursive;
+}
+
+td {
+  background-color: #2C3539;
+  color: white;
+  height: 40px;
+  font-size: 120%;
+}
+
+th {
+  color: white;
+  border: 1px solid gray; 
+  height: 40px;
+}
+
+
+/*
+ #photonDiv{
+  margin-top: 7%;
+ }
+
+ #historyDiv{
+  margin-top: 7%;
+ }
+
+ #aboutDiv{
+
+ }*/
+
+ #postBtn{
+  height: 20px;
+  width: 20px;
+  background: white;
+ }
+
+ #startPhoton {
+  background-color: black;
+  color: white;
+  position: relative;
+  /*bottom: 50%;*/
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+  width: 30%;
+  height: 80px;
+  font-size: 400%;
+  font-family: Georgia, "Times New Roman";
+  border: 6px inline #1456FF;
+  border-radius: 5px;
+  transition: height 2s;
+  opacity: 0.6;
+ }
+
+ #info{
+  
+  color: white;
+  position: relative;
+  margin-top: 5%;
+  margin-left: 25%;
+  text-align: center;
+  display: block;
+  width: 50%;
+  height: 20%;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman";
+  border: 6px inline #1456FF;
+  border-radius: 5px;
+  transition: height 2s;
+  
+ }
+
+ #infoText, #infoText2 {
+  width: 100%;
+  margin-top: 100px;
+}
+
+ #backButton {
+
+  color: white;
+  position: relative;
+  top: -400px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 80px;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman";
+  border: 6px inline #1456FF;
+  border-radius: 5px;
+  transition: height 2s;
+ }
+
+ #history{
+  margin-top: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: 10%;
+  font-size: 50px;
+  font-family: Georgia, "Times New Roman";
+  border: 6px inline #1456FF;
+  border-radius: 5px;
+  transition: height 2s;
+  opacity: 0.6;
+  position: absolute;
+  /*z-index: -1;*/
+
+ }
+
+ #about{
+  margin-top: 240px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: 10%;
+  font-size: 50px;
+  font-family: Georgia, "Times New Roman";
+  border: 6px inline #1456FF;
+  border-radius: 5px;
+  transition: height 2s;
+  opacity: 0.6;
+  position: absolute;
+  /*z-index: -1;*/
+ 
+ }
+
+ #aboutText{
+  margin-top: 100px;
+ }
+
+ #backBtn{
+  background-color: white;
+  color: black;
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 20%;
+  height: 100px;
+  font-size: 50px;
+  font-family: Georgia, "Times New Roman";
+  border: 6px inline #1456FF;
+  border-radius: 5px;
+  opacity: 0.6;
+ }
+/*
+#box.clicked {
+  height: 50%;
+}
+*/
+
+ a:link {
+     text-decoration: none;
+ }
+
+h1:hover {
+  color: #59A8FF;
+}
+
+#time {
+  position: absolute;
+  left: 46.5%;
+  top: 47%;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+.textload {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
