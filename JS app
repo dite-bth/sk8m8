@@ -1,12 +1,11 @@
-
 var expanded = false;
+var photonDone = false;
 
 $(document).ready(function () {
 
 	$("#backButton").hide();
 	$("#startPhoton").hide();
 	$("#info").hide();
-	$("#loader").hide();
 	$("#arrow").hide();
 	$("#submitDiv").hide();
 	$("#aboutText").hide();
@@ -20,9 +19,10 @@ $(document).ready(function () {
 					$("#startPhoton").hide();
 					$("#info").hide();
 					$("#submitDiv").hide();
-					$("#infoText").text("To begin hit Start and wait for your Photon to light up. </br>You then have 6 seconds to perform one, two or three ollies.");
+					$("#infoText").text("To begin hit Start and wait for your Photon to light up. You then have 6 seconds to perform one, two or three ollies.");
 					$("#infoText2").text("");
 					$("#submitDiv").text("");
+					$("#startPhoton").text("Start");
 					$(this).css('font-size', '350%');
 					$(this).text('Begin Session');
 					setTimeout(function() {
@@ -35,15 +35,14 @@ $(document).ready(function () {
 					
 				}
 				else{
-					$(this).text('Start Session');
+					
 					$(this).css('opacity', '1.0');
 					$(this).text('^');
 					$(this).css('font-size', '500%');
+					$("#startPhoton").text("Start");
 					$("#history").hide();
 					$("#about").hide();
 					setTimeout(function() {
-						$("#arrow").show();
-						$("#backButton").show();
 						$("#startPhoton").show();
 						$("#info").show();
 					}, 600);
@@ -87,7 +86,7 @@ $(document).ready(function () {
 						
 					}, 800);
 					
-					
+					photonDone = false;
 				}
 				else{
 					setTimeout(function() {
@@ -120,7 +119,7 @@ $(document).ready(function () {
 					}, 1400);
 
 
-
+					photonDone = false;
 					expanded = true;
 				}
 					
@@ -213,47 +212,64 @@ $(document).ready(function () {
 	});
 
 	$('#startPhoton').click(function() {
-		$(this).hide();
-		$("#loader").show();
-		setTimeout(function() {
+		if (photonDone) {
+			$("#submitDiv").hide();
+			$("#startPhoton").text("Start");
+			$("#infoText").text("To begin hit Start and wait for your Photon to light up. You then have 6 seconds to perform one, two or three ollies.");
+			$("#infoText2").text("");
+			$("#startPhoton").css('margin-top', '5%');
+			photonDone = false;
+
+		}
+		else {
+			$(this).hide();
+			$("#infoText").css('font-size', '40px');
+			$("#infoText").text("Running Photon");
+			setTimeout(function() {
+				$("#infoText").text("Running Photon.");
+			}, 1000);
+			setTimeout(function() {
+				$("#infoText").text("Running Photon..");
+			}, 2000);
+			setTimeout(function() {
+				$("#infoText").text("Running Photon...");
+				$.ajax({url: 'RunPhoton.php'});
+			}, 3000);
 			
-		}, 1000);
-		setTimeout(function() {
-			
-		}, 2000);
-		setTimeout(function() {
-			$("#loader").hide();
-			$.ajax({url: 'RunPhoton.php'});
-		}, 3000);
-		
-		setTimeout(function() {
-			$.ajax({
-   			url: 'AirtimeCalculator.php',
-   			success: function (response) {
-   				var commaCheck = response.includes(",");
-	   			if (response == 0) {
-	   				var result = "invalid. Either you didn't jump, or you're cheating";
-	   			}
-	   			else {
-	   				if (commaCheck) {
-	   					var jumps = response.split(",");
-	   					var result = Math.max.apply(Math, jumps);
+			setTimeout(function() {
+				$.ajax({
+	   			url: 'AirtimeCalculator.php',
+	   			success: function (response) {
+	   				var commaCheck = response.includes(",");
+		   			if (response == 0) {
+		   				$("#infoText").css('font-size', '20px');
+		   				var result = "invalid. Either you didn't jump, or you're cheating";
+		   			}
+		   			else {
+		   				if (commaCheck) {
+		   					var jumps = response.split(",");
+		   					var result = Math.max.apply(Math, jumps);
+		   				}
+		   				else {
+		   					var result = response;
+		   				}
+		   			}
+		   			
+		   			$("#time").val(result);
+		   			$("#infoText").css('font-size', '20px');
+		     		$("#infoText").text("Your best airtime was " + result + " second(s).");
+		     		$("#infoText2").text("Would you like to add your result to the leaderboard?");
+		     		$("#submitDiv").show();
+		     		$("#startPhoton").show();
+		     		$("#startPhoton").text("Retry?");
+		     		$("#startPhoton").css('margin-top', '-5%');
+		     		photonDone = true;
 	   				}
-	   				else {
-	   					var result = response;
-	   				}
-	   			}
-	   			
-	   			$("#time").val(result);
+				});
 
-	     		$("#infoText").text("Your best airtime was " + result + " second(s).");
-	     		$("#infoText2").text("Would you like to add your result to the leaderboard?");
-	     		$("#submitDiv").show();
-   				}
-			});
+			}, 15000);
 
-		}, 13000);
-
+		}
 	});
 	/*$('#postBtn').click(function() {
 		var nameString = $('#nameInput').val();
@@ -289,3 +305,4 @@ $(document).ready(function () {
     });
 });
 });
+
