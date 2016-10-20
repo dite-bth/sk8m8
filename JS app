@@ -1,5 +1,6 @@
 var expanded = false;
 var photonDone = false;
+var busy = false;
 
 $(document).ready(function () {
 
@@ -11,174 +12,180 @@ $(document).ready(function () {
 	$("#aboutText").hide();
 
 	$('#box').click(function() {
-			
-				$("#photonDiv").slideToggle("slow");
-				if (expanded) {
-					$("#arrow").hide();
-					$("#backButton").hide();
-					$("#startPhoton").hide();
-					$("#info").hide();
-					$("#submitDiv").hide();
-					$("#infoText").text("To begin hit Start and wait for your Photon to light up. You then have 6 seconds to perform one, two or three ollies.");
-					$("#infoText2").text("");
-					$("#submitDiv").text("");
-					$("#startPhoton").text("Start");
-					$(this).css('font-size', '350%');
-					$(this).text('Begin Session');
-					setTimeout(function() {
-						expanded = false;
-						$("#history").show();
-						$("#about").show();
-						$(this).css('opacity', '0.6');
-					}, 600);
-					
-					
+				if (busy == false) {
+					busy = true;
+					$("#photonDiv").slideToggle("slow");
+					if (expanded) {
+						$("#arrow").hide();
+						$("#backButton").hide();
+						$("#startPhoton").hide();
+						$("#info").hide();
+						$("#submitDiv").hide();
+						$("#infoText").text("To begin hit Start and wait for your Photon to light up. You then have 6 seconds to perform one, two or three ollies.");
+						$("#infoText2").text("");
+						$("#submitDiv").text("");
+						$("#startPhoton").text("Start");
+						$(this).css('font-size', '350%');
+						$(this).text('Begin Session');
+						setTimeout(function() {
+							expanded = false;
+							$("#history").show();
+							$("#about").show();
+
+							$("#box").animate({
+						   	opacity: "0.6",
+						  }, 500, function() {
+						    // Animation complete.
+						  });
+							busy = false;
+						}, 600);
+						
+						
+					}
+					else{
+						busy = true;
+						$(this).css('opacity', '1.0');
+						$(this).text('^');
+						$(this).css('font-size', '500%');
+						$("#startPhoton").text("Start");
+						$("#history").hide();
+						$("#about").hide();
+						setTimeout(function() {
+							$("#startPhoton").show();
+							$("#info").show();
+							busy = false;
+						}, 600);
+						
+						expanded = true;
+					}
 				}
-				else{
-					
-					$(this).css('opacity', '1.0');
-					$(this).text('^');
-					$(this).css('font-size', '500%');
-					$("#startPhoton").text("Start");
-					$("#history").hide();
-					$("#about").hide();
-					setTimeout(function() {
-						$("#startPhoton").show();
-						$("#info").show();
-					}, 600);
-					
-					expanded = true;
-				}
-				
 	});
 
 	$('#history').click(function() {
 		
-
-				if (expanded) {
-					$("#historyDiv").slideToggle("slow");
-
-					//$(this).css('margin-top', '10%')
-					$(this).css('font-size', '50px');
-					$(this).text('');
-
-					setTimeout(function() {
-						expanded = false;
-						$("#box").show();
-						$("#about").show();
-						$("#history").text('History');
-						$(this).css('opacity', '0.6');
-
-					}, 1500);
-
-					/*
-					setTimeout(function() {
-					
-					}, 1000);
-					*/
-					setTimeout(function() {
-						$("#history").animate({
-					    marginTop: "120px",
-					   
-					  }, 500, function() {
-					    // Animation complete.
-					  });
-						
-					}, 800);
-					
-					photonDone = false;
-				}
-				else{
-					setTimeout(function() {
+				if (busy == false) {
+					busy = true;
+					if (expanded) {
 						$("#historyDiv").slideToggle("slow");
-					}, 1000);
 
-					$("#history").animate({
-					    marginTop: 0,
-					   
-					  }, 1000, function() {
-					    // Animation complete.
-					  });
-					$(this).css('margin-top', '0px')
-					$(this).text('Start Session');
-					$(this).css('opacity', '1.0');
-					$(this).text('');
-					$(this).css('font-size', '500%');
-					$("#box").hide();
-					$("#about").hide();
-					setTimeout(function() {
-						$('#history').text('^');
+						//$(this).css('margin-top', '10%')
+						$(this).css('font-size', '50px');
+						$(this).text('');
 
-					}, 1400);
+						setTimeout(function() {
+							expanded = false;
+							$("#box").show();
+							$("#about").show();
+							$("#history").text('History');
+							$("#history").css('opacity', '0.6');
+							busy = false;
+						}, 1500);
 
+						/*
+						setTimeout(function() {
+						
+						}, 1000);
+						*/
+						setTimeout(function() {
+							$("#history").animate({
+						    marginTop: "120px",
+						   	opacity: "0.6",
+						  }, 500, function() {
+						    // Animation complete.
+						  });
+							
+						}, 800);
+						
+						photonDone = false;
+					}
+					else{
+						setTimeout(function() {
+							$("#historyDiv").slideToggle("slow");
+						}, 1000);
 
-					photonDone = false;
-					expanded = true;
+						$("#history").animate({
+						    marginTop: 0,
+						   
+						  }, 1000, function() {
+						    // Animation complete.
+						  });
+						$(this).css('margin-top', '0px')
+						$(this).text('Start Session');
+						$(this).css('opacity', '1.0');
+						$(this).text('');
+						$(this).css('font-size', '500%');
+						$("#box").hide();
+						$("#about").hide();
+						setTimeout(function() {
+							$('#history').text('^');
+							busy = false;
+						}, 1400);
+
+						
+						photonDone = false;
+						expanded = true;
+					}
 				}
-					
 	});
 
 	$('#about').click(function() {
 		
-
-				if (expanded) {
-					$("#aboutDiv").slideToggle("slow");
-
-					//$(this).css('margin-top', '10%')
-					$(this).css('font-size', '50px');
-					$(this).text('');
-
-					setTimeout(function() {
-						expanded = false;
-						$("#box").show();
-						$("#history").show();
-						$("#about").text('About');
-						$(this).css('opacity', '0.6');
-
-					}, 1500);
-
-					/*
-					setTimeout(function() {
-					
-					}, 1000);
-					*/
-					setTimeout(function() {
-						$("#about").animate({
-					    marginTop: "240px",
-					   
-					  }, 500, function() {
-					    // Animation complete.
-					  });
-						
-					}, 800);
-					
-					
-				}
-				else{
-					setTimeout(function() {
+				if (busy == false) {
+					busy = true;
+					if (expanded) {
 						$("#aboutDiv").slideToggle("slow");
-					}, 1000);
 
-					$("#about").animate({
-					    marginTop: 0,
-					   
-					  }, 1000, function() {
-					    // Animation complete.
-					  });
-					$(this).css('margin-top', '0px')
-					$(this).text('Start Session');
-					$(this).css('opacity', '1.0');
-					$(this).text('');
-					$(this).css('font-size', '500%');
-					$("#box").hide();
-					$("#history").hide();
-					setTimeout(function() {
-						$('#about').text('^');
-						$("#aboutText").show();
-					}, 1400);
-					expanded = true;
+						//$(this).css('margin-top', '10%')
+						$(this).css('font-size', '50px');
+						$(this).text('');
+
+						setTimeout(function() {
+							expanded = false;
+							$("#box").show();
+							$("#history").show();
+							$("#about").text('About');
+							busy = false;
+						}, 1500);
+
+						
+						setTimeout(function() {
+							$("#about").animate({
+						    marginTop: "240px",
+						   	opacity: "0.6",
+						  }, 500, function() {
+						    // Animation complete.
+						  });
+							
+						}, 800);
+						
+						
+					}
+					else{
+						setTimeout(function() {
+							$("#aboutDiv").slideToggle("slow");
+						}, 1000);
+
+						$("#about").animate({
+						    marginTop: 0,
+						   
+						  }, 1000, function() {
+						    // Animation complete.
+						  });
+						$(this).css('margin-top', '0px')
+						$(this).text('Start Session');
+						$(this).css('opacity', '1.0');
+						$(this).text('');
+						$(this).css('font-size', '500%');
+						$("#box").hide();
+						$("#history").hide();
+						setTimeout(function() {
+							$('#about').text('^');
+							$("#aboutText").show();
+							busy= false;
+						}, 1400);
+						expanded = true;
+					}
 				}
-					
 	});
 	
 
@@ -267,17 +274,7 @@ $(document).ready(function () {
 
 		}
 	});
-	/*$('#postBtn').click(function() {
-		var nameString = $('#nameInput').val();
-		
-		$.ajax({
-   			url: 'InsertToDatabase.php',
-   			success: function (response) {
-   				$("#infoText").text(response);
-   				}
-			});
-	});*/
-
+	
 	$('#reg-form').submit(function(e){
 		
     e.preventDefault(); // Prevent Default Submission
